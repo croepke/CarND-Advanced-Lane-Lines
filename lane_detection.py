@@ -91,10 +91,8 @@ def detect_lane(binary_warped):
 
 def calculate_dist_from_center(left_lane_x, right_lane_x, x_len):
     xm_per_pix = 3.7/700
-    print(left_lane_x, right_lane_x)
     lane_center = (left_lane_x + right_lane_x) / 2
     view_center = x_len / 2
-    print(lane_center, view_center)
     return np.abs(view_center - lane_center) * xm_per_pix
 
 def calculate_curvature(left_fitx, right_fitx, ploty):
